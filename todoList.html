@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-style: italic;
+            font-weight: bolder;
+        }
+        
+        #containeer1 {
+            background-color: aqua;
+            height: 100px;
+            width: 500px;
+            margin: 10px;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            border-style: solid;
+            border-radius: 1px;
+            border-color: darkblue;
+        }
+        
+        #containeer2 {
+            width: 500px;
+            margin: 10px;
+            background-color: chartreuse;
+            min-height: 200px;
+            max-height: 10000px;
+            border-style: solid;
+            border-radius: 1px;
+            border-color: darkblue;
+        }
+        
+        li {
+            background-color: chartreuse;
+            max-width: 400px;
+            min-width: 400px;
+            height: auto;
+        }
+        
+        button {
+            background-color: chocolate;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        input {
+            border-radius: 7px;
+        }
+        
+        li>button {
+            background-color: rgb(39, 121, 245);
+            border-radius: 5px;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div id="containeer1">
+        <input type="text" name="inputText" id="inputVal">
+
+        <button id="mybutton" onclick="myFunction()">Click</button>
+
+    </div>
+
+
+    <div id="containeer2">
+        <h1>Enter your ToDo Tasks</h1>
+        <ul id="list">
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function myFunction() {
+            var val = document.getElementById("inputVal").value
+            var btn = document.getElementById("mybutton")
+            gettheUlList = this.document.getElementById("list");
+
+
+            //createing an li
+            var listCreated = document.createElement("li")
+                //creating textNode
+
+            var textNode = document.createTextNode(val)
+
+            //append child to li
+
+            listCreated.appendChild(textNode)
+
+
+
+            //creating button
+            var mybutton = document.createElement("button")
+
+            mybutton.innerHTML = "done"
+
+            listCreated.appendChild(mybutton)
+
+
+
+
+            // add to ul
+            document.getElementById("list").appendChild(listCreated)
+
+
+            //remove element
+            mybutton.onclick = function() {
+                gettheUlList.removeChild(listCreated);
+
+            }
+
+
+
+
+
+
+
+
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>
